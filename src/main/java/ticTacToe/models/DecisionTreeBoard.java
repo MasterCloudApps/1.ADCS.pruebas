@@ -113,12 +113,12 @@ public class DecisionTreeBoard extends Board {
 			}
 		}
 	}
-	
+
 	@Override
 	public String toString() {
 		String result = "";
-		for(int i=0; i<colors.length; i++){
-			for(int j=0; j<colors[i].length; j++){
+		for (int i = 0; i < colors.length; i++) {
+			for (int j = 0; j < colors[i].length; j++) {
 				char color = '.';
 				if (colors[i][j] != null) {
 					color = colors[i][j].name().charAt(0);
@@ -129,14 +129,14 @@ public class DecisionTreeBoard extends Board {
 		}
 		return result;
 	}
-	
-	public void writeFile(String name){
+
+	public void writeFile(String name) {
 		PrintWriter out = null;
 		try {
-			out = new PrintWriter(name+ ".ttt");
-			for(int i=0; i<colors.length; i++){
-				for(int j=0; j<colors[i].length; j++){
-					out.print(colors[i][j].ordinal()+" ");
+			out = new PrintWriter(name + ".ttt");
+			for (int i = 0; i < colors.length; i++) {
+				for (int j = 0; j < colors[i].length; j++) {
+					out.print(colors[i][j].ordinal() + " ");
 				}
 				out.println();
 			}
@@ -148,15 +148,15 @@ public class DecisionTreeBoard extends Board {
 			}
 		}
 	}
-	
-	public void readFile(String name){
+
+	public void readFile(String name) {
 		BufferedReader in = null;
 		try {
-			in = new BufferedReader(new FileReader(name+".ttt"));
-			for(int i=0; i<colors.length; i++){
+			in = new BufferedReader(new FileReader(name + ".ttt"));
+			for (int i = 0; i < colors.length; i++) {
 				String linea = in.readLine();
 				Scanner scanner = new Scanner(linea);
-				for(int j=0; j<colors[i].length; j++){
+				for (int j = 0; j < colors[i].length; j++) {
 					colors[i][j] = Color.values()[scanner.nextInt()];
 				}
 				scanner.close();
@@ -171,6 +171,7 @@ public class DecisionTreeBoard extends Board {
 					System.out.println("IOException al cerrar: " + ex.getMessage());
 				}
 			}
-		
+
+		}
 	}
 }
