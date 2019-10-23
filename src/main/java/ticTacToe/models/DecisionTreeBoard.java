@@ -159,6 +159,7 @@ public class DecisionTreeBoard extends Board {
 				for(int j=0; j<colors[i].length; j++){
 					colors[i][j] = Color.values()[scanner.nextInt()];
 				}
+				scanner.close();
 			}
 		} catch (IOException ex) {
 			System.out.println("IOException al leer: " + ex.getMessage());
@@ -170,6 +171,6 @@ public class DecisionTreeBoard extends Board {
 					System.out.println("IOException al cerrar: " + ex.getMessage());
 				}
 			}
-		}
+		
 	}
 }
