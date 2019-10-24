@@ -9,9 +9,8 @@ public class TurnTest {
 	@Test
 	public void testTurn() {
 		// arrange
-		Turn OUTTurn;
+		Turn OUTTurn = new Turn();;
 		// act
-		OUTTurn = new Turn();
 		Color resultColor = OUTTurn.take();
 		// assertions
 		Color expectedColor = Color.XS;
