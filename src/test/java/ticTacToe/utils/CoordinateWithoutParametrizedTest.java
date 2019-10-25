@@ -12,15 +12,6 @@ public class CoordinateWithoutParametrizedTest {
 
 	public static Collection<Object[]> data() {
 		return Arrays.asList(new Object[][] {
-				// private int OUTRow;
-				// private int OUTColumn;
-				//
-				// private Coordinate coordinate;
-				//
-				// private boolean expectedInRow;
-				// private boolean expectedInColumn;
-				// private boolean expectedInMainDiagonal;
-				// private Direction expectedDirection;
 				{ 2, 8, new Coordinate(2, 5), true, false, false,
 						Direction.HORIZONTAL },
 				{ 1, 6, new Coordinate(3, 0), false, false, false,

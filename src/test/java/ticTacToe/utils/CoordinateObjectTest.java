@@ -47,27 +47,27 @@ public class CoordinateObjectTest {
 	public void testInRow() {
 		this.before();
 		boolean resultInRow = OUTCoordinate.inRow(coordinate);
-		assertEquals("For OUTCoordinate " + OUTCoordinate + " and "
+		assertEquals("testInRow: For OUTCoordinate " + OUTCoordinate + " and "
 				+ coordinate, expectedInRow, resultInRow);
 	}
 
 	public void testInColumn() {
 		this.before();
 		boolean resultInColumn = OUTCoordinate.inColumn(coordinate);
-		assertEquals("For OUTCoordinate " + OUTCoordinate + " and "
+		assertEquals("testInColumn: For OUTCoordinate " + OUTCoordinate + " and "
 				+ coordinate, expectedInColumn, resultInColumn);
 	}
 	
 	public void testInMainDiagonal() {
 		this.before();
 		boolean resultInMainDiagonal = OUTCoordinate.inMainDiagonal();
-		assertEquals("For OUTCoordinate " + OUTCoordinate, expectedInMainDiagonal, resultInMainDiagonal);
+		assertEquals("testInMainDiagonal: For OUTCoordinate " + OUTCoordinate, expectedInMainDiagonal, resultInMainDiagonal);
 	}
 	
 	public void testDirection() {
 		this.before();
 		Direction resultDirection = OUTCoordinate.direction(coordinate);
-		assertEquals("For OUTCoordinate " + OUTCoordinate + " and "
+		assertEquals("testDirection: For OUTCoordinate " + OUTCoordinate + " and "
 				+ coordinate, expectedDirection, resultDirection);
 	}
 

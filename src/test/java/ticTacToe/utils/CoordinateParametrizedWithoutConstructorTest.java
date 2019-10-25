@@ -30,13 +30,11 @@ public class CoordinateParametrizedWithoutConstructorTest {
 	
 	@Parameters(name="({0}, {1}) y {2}")
 	public static Collection<Object[]> data() {
-		return Arrays.asList(new Object[][] {
-				{ 2, 8, new Coordinate(2, 5), true, false, false,
-						Direction.HORIZONTAL },
-				{ 2, 8, new Coordinate(2, 5), true, false, false,
-						Direction.HORIZONTAL },
-				{ 2, 8, new Coordinate(2, 5), true, false, false,
-						Direction.HORIZONTAL }, });
+		return Arrays.asList(new Object[][] { 
+			{ 2, 8, new Coordinate(2, 5), true, false, false, Direction.HORIZONTAL },
+			{ 1, 6, new Coordinate(6, 6), true, true, false, Direction.VERTICAL },
+			{ 3, 3, new Coordinate(6, 6), false, false, true, Direction.MAIN_DIAGONAL }, 
+		});
 	}
 	
 	private Coordinate OUTCoordinate;

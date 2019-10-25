@@ -26,26 +26,19 @@ public class CoordinateParametrizedTest {
 	private boolean expectedInColumn;
 	private boolean expectedInMainDiagonal;
 	private Direction expectedDirection;
-	
-	@Parameters(name="({0}, {1}) con {2}")
+
+	@Parameters(name = "({0}, {1}) con {2}")
 	public static Collection<Object[]> data() {
-		return Arrays.asList(new Object[][] {
-				{ 2, 8, new Coordinate(2, 5), true, false, false,
-						Direction.HORIZONTAL },
-				{ 2, 8, new Coordinate(2, 5), true, false, false,
-						Direction.HORIZONTAL },
-				{ 2, 8, new Coordinate(2, 5), true, false, false,
-						Direction.HORIZONTAL },
-				{ 1, 6, new Coordinate(6, 6), false, true, false,
-						Direction.VERTICAL },});
+		return Arrays.asList(new Object[][] { 
+			{ 2, 8, new Coordinate(2, 5), true, false, false, Direction.HORIZONTAL },
+			{ 1, 6, new Coordinate(6, 6), false, true, false, Direction.VERTICAL },
+			{ 3, 3, new Coordinate(6, 6), false, false, true, Direction.MAIN_DIAGONAL }, 
+		});
 	}
-	
-	public CoordinateParametrizedTest(
-			int OUTRow, int OUTColumn, // OUT
+
+	public CoordinateParametrizedTest(int OUTRow, int OUTColumn, // OUT
 			Coordinate coordinate, // arguments
-			boolean expectedInRow, 
-			boolean expectedInColumn,
-			boolean expectedInMainDiagonal, 
+			boolean expectedInRow, boolean expectedInColumn, boolean expectedInMainDiagonal,
 			Direction expectedDirection) {
 		this.OUTRow = OUTRow;
 		this.OUTColumn = OUTColumn;
@@ -57,9 +50,9 @@ public class CoordinateParametrizedTest {
 		this.expectedInMainDiagonal = expectedInMainDiagonal;
 		this.expectedDirection = expectedDirection;
 	}
-	
+
 	private Coordinate OUTCoordinate;
-	
+
 	@Before
 	public void before() {
 		OUTCoordinate = new Coordinate(OUTRow, OUTColumn);
@@ -74,12 +67,12 @@ public class CoordinateParametrizedTest {
 	public void testInColumn() {
 		assertEquals(expectedInColumn, OUTCoordinate.inColumn(coordinate));
 	}
-	
+
 	@Test
 	public void testInMainDiagonal() {
 		assertEquals(expectedInMainDiagonal, OUTCoordinate.inMainDiagonal());
 	}
-	
+
 	@Test
 	public void testDirection() {
 		assertEquals(expectedDirection, OUTCoordinate.direction(coordinate));
