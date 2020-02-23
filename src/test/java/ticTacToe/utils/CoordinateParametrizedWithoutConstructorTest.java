@@ -12,9 +12,6 @@ import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameter;
 import org.junit.runners.Parameterized.Parameters;
 
-import ticTacToe.utils.Coordinate;
-import ticTacToe.utils.Direction;
-
 @RunWith(Parameterized.class)
 public class CoordinateParametrizedWithoutConstructorTest {
 
